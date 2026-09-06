@@ -6,6 +6,8 @@ cd /app/nitro-converter; yarn install;
 cp /app/configuration/nitro-react/public/* /app/nitro-react/public/
 cd /app/nitro-react; yarn install;
 
+ln -sfn /app/nitro-swf /app/nitro-assets/swf
+
 supervisorctl start swf-http-server
 supervisorctl start assets-http-server
 supervisorctl start nitro-dev-server

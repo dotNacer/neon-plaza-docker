@@ -5,6 +5,9 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     plugins: [ react() ],
+    server: {
+        allowedHosts: true
+    },
     resolve: {
         alias: {
             '@': resolve(__dirname, 'src'),
