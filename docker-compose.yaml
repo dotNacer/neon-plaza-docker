@@ -12,9 +12,7 @@ services:
     container_name: arcturus
     build:
       context: emulator
-    entrypoint: ["/bin/sh","/app/scripts/build.sh"]
     volumes:
-      - ./emulator/:/app/
       - volume-arcturus-target:/app/arcturus/target
       - volume-arcturus-maven-repo:/root/.m2
     depends_on:
@@ -26,11 +24,6 @@ services:
     container_name: nitro
     build:
       context: nitro
-    entrypoint: ["/bin/sh","/app/scripts/build.sh"]
-    volumes:
-      - ./nitro/:/app/
-      - volume-nitro-converter-node-modules:/app/nitro-converter/node_modules
-      - volume-nitro-react-node-modules:/app/nitro-react/node_modules
     networks:
       nitro:
 

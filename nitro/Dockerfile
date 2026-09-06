@@ -10,4 +10,9 @@ RUN apk add rsync
 
 RUN yarn global add http-server
 
-RUN yarn install
+COPY . /app/
+
+RUN cd /app/nitro-converter && yarn install
+RUN cd /app/nitro-react && yarn install
+
+ENTRYPOINT ["/bin/sh", "/app/scripts/build.sh"]
